@@ -25,3 +25,4 @@ sshNotes
 		echo "https://{username}:{password}@github.com">>.git-credentials
 		git config --global credential.helper store
 
+
