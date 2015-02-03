@@ -14,7 +14,11 @@ sshNotes
 	then try a test
 		ssh -T git@github.com
 		enter your password
-		ok, now ssh login is right
+	try to save the password
+	eval `ssh-agent`
+	ssh-add
+	enter your password
+	ok, now ssh login is right
 2:git push with no user and password
 	first : change the connect to ssh
 		git remote -v
