@@ -1,2 +1,27 @@
 sshNotes
-sshNotes
+
+/**
+*git push:have to write username and password
+*try to push whithout user
+*1:config ssh key
+*2:change connection to ssh
+*3:save user info to a file
+*/
+1:create a public key
+	create a backup dir for ~/.ssh
+	ssh-keygen -t rsa -C "your username"
+	copy ~/.ssh/id.rsa.pub content to your target as ssh key
+	then try a test
+		ssh -T git@github.com
+		enter your password
+		ok, now ssh login is right
+2:git push with no user and password
+	first : change the connect to ssh
+		git remote -v
+		if show that like https://github.com/ajupanpan/myNotes.git
+			git remote rm origin
+			git remote add origin git@github.com:ajupanpan/myNotes.git
+	then save the user info to a file
+		echo "https://{username}:{password}@github.com">>.git-credentials
+		git config --global credential.helper store
+
